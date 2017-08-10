@@ -106,10 +106,21 @@ var sendSpecificBuildingData = function (reqData , callback)
 
 
                     var iWaypoints = iBuffer.toString().trim().replace(/\n/g ,',').replace(/\r/g,',').split(',');
+                    var finalWaypoints = [];
+
+                    for (var i = 0; i < iWaypoints.length; i++) {
+                    	
+                    	if(iWaypoints[i]!="")
+                    	{
+                    		finalWaypoints.push( iWaypoints[i] );
+                    	}
+
+                    }
+
 
                     iObj = {
                         level: iterator,
-                        waypoints: iWaypoints
+                        waypoints: finalWaypoints
                     };
                     objToSend[floorListKey].push(iObj);
 
