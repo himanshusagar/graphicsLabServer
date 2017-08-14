@@ -86,12 +86,12 @@ var sendSpecificBuildingData = function (reqData , callback)
         objToSend[floorListKey] = [];
 
 
-        iterator = 0;
+        iterator = -1;
 
-        for (iterator = 0; iterator < 20; iterator++) {
+        for (iterator = -1 ; iterator < 10 ; iterator++) {
 
             var iString = null;
-            if (iterator < 9)
+            if (iterator < 10 && iterator > -1)
                 iString = "0" + iterator;
             else
                 iString = iterator;
@@ -128,7 +128,7 @@ var sendSpecificBuildingData = function (reqData , callback)
             }
             else {
                 console.log("Files failed on " + (iterator - 1) + " " + iFileNameFloor);
-                break;
+              //  break;
             }
 
         }
